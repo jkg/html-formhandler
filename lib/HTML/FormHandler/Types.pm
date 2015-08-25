@@ -143,13 +143,13 @@ Trims the string of starting and ending spaces
 
 =cut
 
-subtype PositiveNum, as Num, where { $_ >= 0 }, message { "Must be a positive number" };
+subtype PositiveNum, as Num, where { $_ > 0 }, message { "Must be a positive number" };
 
-subtype PositiveInt, as Int, where { $_ >= 0 }, message { "Must be a positive integer" };
+subtype PositiveInt, as Int, where { $_ > 0 }, message { "Must be a positive integer" };
 
-subtype NegativeNum, as Num, where { $_ <= 0 }, message { "Must be a negative number" };
+subtype NegativeNum, as Num, where { $_ < 0 }, message { "Must be a negative number" };
 
-subtype NegativeInt, as Int, where { $_ <= 0 }, message { "Must be a negative integer" };
+subtype NegativeInt, as Int, where { $_ < 0 }, message { "Must be a negative integer" };
 
 subtype SingleDigit, as PositiveInt, where { $_ <= 9 }, message { "Must be a single digit" };
 
